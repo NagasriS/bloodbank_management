@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+<h1>Edit Page</h1>
+	<form class="form-horizontal" action="{{url_for('update')}}" method="POST">
+
+	<div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Name:</label>
+    	<div class="col-sm-6">
+    		<input type="text" class="form-control" id="name" name="name" value="{{data[0][1]}}" placeholder="Enter Name">
+    	</div>
+	</div>
+
+	<div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Email:</label>
+    	<div class="col-sm-6">
+    		<input type="email" class="form-control" id="email" name="email" value="{{data[0][2]}}" placeholder="Enter Email">
+    	</div>
+	</div>
+
+	<div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Phno:</label>
+    	<div class="col-sm-6">
+    		<input type="text" class="form-control" id="phno" name="phno" value="{{data[0][3]}}" placeholder="Enter Phno">
+    	</div>
+	</div>
+
+	<div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Blood Group:</label>
+    	<div class="col-sm-6">
+    		<select class="form-control" id="blood_group" name="blood_group">
+    			<option value="A+" {% if data[0][4]=="A+" %} selected {% endif %}>A+</option>
+    			<option value="A-" {% if data[0][4]=="A-" %} selected {% endif %}>A-</option>
+    			<option value="B+" {% if data[0][4]=="B+" %} selected {% endif %}>B+</option>
+    			<option value="B-" {% if data[0][4]=="B-" %} selected {% endif %}>B-</option>
+    			<option value="AB+" {% if data[0][4]=="AB+" %} selected {% endif %}>AB+</option>
+    			<option value="AB-" {% if data[0][4]=="AB-" %} selected {% endif %}>AB-</option>
+    			<option value="O+" {% if data[0][4]=="O+" %} selected {% endif %}>O+</option>
+    			<option value="O-" {% if data[0][4]=="O-" %} selected {% endif %}>O-</option>
+    			<option value="Don't know" {% if data[0][4]=="Don't know" %} selected {% endif %}>Don't know</option>
+    		</select>
+    	</div>
+	</div>
+	<div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Weight:</label>
+    	<div class="col-sm-6">
+    		<input type="text" class="form-control" id="weight" name="weight" value="{{data[0][5]}}" placeholder="Enter Weight">
+    	</div>
+	</div>
+	<div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Gender:</label>
+    	<div class="col-sm-6">
+		<label class="radio-inline"><input type="radio" name="gender" value="Male" {% if data[0][6]=="Male" %} checked {% endif %}>Male</label>
+		<label class="radio-inline"><input type="radio" name="gender" value="Female" {% if data[0][6]=="Female" %} checked {% endif %}>Female</label>
+		<label class="radio-inline"><input type="radio" name="gender" value="Others" {% if data[0][6]=="Others" %} checked {% endif %}>Others</label>
+		</div>
+	</div>
+	<div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Dob:</label>
+    	<div class="col-sm-6">
+    		<input type="date" class="form-control" id="dob" name="dob" value="{{data[0][7]}}" placeholder="Enter Dob">
+    	</div>
+    </div>
+
+    <div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Address:</label>
+    	<div class="col-sm-6">
+    		<input type="text" class="form-control" id="address" name="address" value="{{data[0][8]}}" placeholder="Enter Address">
+    	</div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Adharno:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="adharno" name="adharno" value="{{data[0][10]}}" placeholder="Enter Adharno">
+        </div>
+    </div>
+    <div class="form-group">
+    	<div class="col-sm-offset-2 col-sm-10">
+    		<button type="submit" class="btn btn-default" value={{data[0][0]}} name='id'>Submit</button>
+    	</div>
+    </div>
+	</form>
+
+{% endblock %}

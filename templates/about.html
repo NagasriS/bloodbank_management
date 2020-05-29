@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	<script type="text/javascript">
+		var m={{ messages|safe}};
+		for(var i=0;i<m.length;i++)
+		{
+			alert(m[i]);
+		}
+	</script>
+
+	{% endif %}
+{% endwith %}
+<h1>Registration Page</h1>
+	<form class="form-horizontal" action="{{url_for('register')}}" method="POST">
+
+	<div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Name:</label>
+    	<div class="col-sm-6">
+    		<input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+    	</div>
+	</div>
+
+	<div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Email:</label>
+    	<div class="col-sm-6">
+    		<input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+    	</div>
+	</div>
+
+	<div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Phno:</label>
+    	<div class="col-sm-6">
+    		<input type="text" class="form-control" id="phno" name="phno" placeholder="Enter Phno">
+    	</div>
+	</div>
+
+	<div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Blood Group:</label>
+    	<div class="col-sm-6">
+    		<select class="form-control" id="blood_group" name="blood_group">
+    			<option value="A+">A+</option>
+    			<option value="A-">A-</option>
+    			<option value="B+">B+</option>
+    			<option value="B-">B-</option>
+    			<option value="AB+">AB+</option>
+    			<option value="AB-">AB-</option>
+    			<option value="O+">O+</option>
+    			<option value="O-">O-</option>
+    			<option value="Don't know">Don't know</option>
+    		</select>
+    	</div>
+	</div>
+	<div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Weight:</label>
+    	<div class="col-sm-6">
+    		<input type="text" class="form-control" id="weight" name="weight" placeholder="Enter Weight">
+    	</div>
+	</div>
+	<div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Gender:</label>
+    	<div class="col-sm-6">
+		<label class="radio-inline"><input type="radio" name="gender" value="Male">Male</label>
+		<label class="radio-inline"><input type="radio" name="gender" value="Female">Female</label>
+		<label class="radio-inline"><input type="radio" name="gender" value="Others">Others</label>
+		</div>
+	</div>
+	<div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Dob:</label>
+    	<div class="col-sm-6">
+    		<input type="date" class="form-control" id="dob" name="dob" placeholder="Enter Dob">
+    	</div>
+    </div>
+
+    <div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Address:</label>
+    	<div class="col-sm-6">
+    		<input type="text" class="form-control" id="address" name="address" placeholder="Enter Address">
+    	</div>
+    </div>
+    <div class="form-group">
+    	<label class="control-label col-sm-2" for="pwd">Adharno:</label>
+    	<div class="col-sm-6">
+    		<input type="text" class="form-control" id="adharno" name="adharno" placeholder="Enter Adharno">
+    	</div>
+    </div>
+    <div class="form-group">
+    	<div class="col-sm-offset-2 col-sm-10">
+    		<button type="submit" class="btn btn-default">Submit</button>
+    	</div>
+    </div>
+	</form>
+
+{% endblock %}
