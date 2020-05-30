@@ -78,8 +78,8 @@ def send():
 		mycur.execute("select phno from donor where sno=%s"%(id))
 		data=mycur.fetchall()
 		
-		account_sid = 'AC1916849916eb04c1ff50a8e93bb94390' 
-		auth_token = 'a1d1e952b3ae57a4583d2beb6849e27f' 
+		account_sid = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' 
+		auth_token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' 
 		client = Client(account_sid, auth_token) 
 		message = client.messages.create( 
    	                  	from_='+12067373432',  
